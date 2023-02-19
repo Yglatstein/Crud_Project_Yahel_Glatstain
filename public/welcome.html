@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+        integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./dist/blog-style.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <body onload="getUserDataByCookie()">
+      <header class="blog-header">
+        <div class="blog-Title">
+          <h1>My Blog</h1>
+        </div>
+        <div class="search">
+          <form  onsubmit="handleSearch(event)">
+            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <input type="submit" class="searchButton" value="Go!"></input>
+          </form>
+       </div>
+        <nav class="blog-menu">
+          <ul class="options">
+            <li><a href="#" onclick="handleLogout(event)">Logout</a></li> 
+            <li><a href="#" onclick="openAddForm()">Add New</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="form-popup" id="addNewPostForm">
+        <form onsubmit="handleAddPost(event)" class="form-container">
+            <br><h2>Add New Post</h2><br>
+          
+            <label for="newPostTitle"><b>Title</b></label><br>
+            <input id="newPostTitle" type="text" placeholder="Post Title" name="newPostTitle" required><br><br>
+          
+            <label for="newPostText"><b>Content</b></label><br>
+            <input id="newPostText" type="text" placeholder="Post Content" name="newPostText" required><br><br>
+
+            <label for="newPostTag">Choose Tag</label>
+            <select name="tags" id="newPostTag">
+              <option value="tag-red">Social</option>
+              <option value="tag-brown">Economics</option>
+              <option value="tag-blue">Technology</option>
+            </select><br><br>
+
+            <button type="submit" class="btn">Add</button>
+            <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <div class="form-popup" id="updatePostForm">
+      <form onsubmit="handleEditPost(event)" class="form-container editForm">
+          <br><h2>Add New Post</h2><br>
+        
+          <label for="updatePostTitle"><b>Title</b></label><br>
+          <input id="updatePostTitle" type="text" placeholder="Post Title" name="updatePostTitle" required><br><br>
+        
+          <label for="updatePostText"><b>Content</b></label><br>
+          <input id="updatePostText" type="text" placeholder="Post Content" name="updatePostText" required><br><br>
+
+          <label for="updatePostTag">Choose Tag</label>
+          <select name="tags" id="updatePostTag">
+            <option value="tag-red">Social</option>
+            <option value="tag-brown">Economics</option>
+            <option value="tag-blue">Technology</option>
+          </select><br><br>
+
+          <button type="submit" class="btn editPostBtn">Update</button>
+          <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+      </form>
+  </div>
+
+    <div class="blog-area">
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./dist/app.js"></script>
+</body>
+</html>

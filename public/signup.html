@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>SignUp</title>
+</head>
+<body onload="handleCheckAvailableConnection()">
+    <div class="login-signup-page">
+        <div class="form">
+          <form class="register-form" onsubmit="handleUserRegistration(event)">
+            <input id="emailRegister" type="text" placeholder="email address"/>
+            <input id="nameRegister" type="text" placeholder="name"/>
+            <input id="imageLinkRegister" type="text" placeholder="image link"/>
+            <input id="passwordRegister" type="password" placeholder="password"/>
+            
+            <button>create</button>
+            <p class="message">Already registered? <a href="index.html">Sign In</a></p>
+          </form>
+        </div>
+      </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./dist/app.js"></script>
+</body>
+</html>
